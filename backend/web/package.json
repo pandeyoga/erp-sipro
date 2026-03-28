@@ -1,0 +1,48 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
+    "@react-input/mask": "^2.0.4",
+    "axios": "^1.9.0",
+    "chart.js": "^4.4.9",
+    "cookies-next": "^6.1.0",
+    "daisyui": "^5.0.28",
+    "i18next": "^25.3.2",
+    "i18next-http-backend": "^3.0.2",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.503.0",
+    "next": "16.0.10",
+    "next-i18next": "^15.4.2",
+    "next-intl": "^4.3.5",
+    "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dnd": "^16.0.1",
+    "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.8",
+    "react-hook-form": "^7.56.1",
+    "react-hot-toast": "^2.5.2",
+    "react-i18next": "^15.6.0",
+    "react-moveable": "^0.56.0",
+    "react-number-format": "^5.4.4",
+    "react-select": "^5.10.2",
+    "recharts": "^2.15.3",
+    "uuid": "^13.0.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

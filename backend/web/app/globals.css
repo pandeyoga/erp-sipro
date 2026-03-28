@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
+
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(97% 0 0);
+  --color-base-300: oklch(94% 0 0);
+  --color-base-content: oklch(20% 0 0);
+  --color-primary: #9D0E32;
+  --color-primary-content: #ffffff;
+  --color-secondary: #aa8c1f;
+  --color-secondary-content: #ffffff;
+  --color-accent: #63C2E8;
+  --color-accent-content: #0F1A2F;
+  --color-neutral: #4D4D66;
+  --color-neutral-content: #ffffff;
+  --color-info: #5C9AE8;
+  --color-info-content: #ffffff;
+  --color-success: #5CE88A;
+  --color-success-content: #0F1A2F;
+  --color-warning: #E8D063;
+  --color-warning-content: #0F1A2F;
+  --color-error: #E86363;
+  --color-error-content: #ffffff;
+  --radius-selector: 0rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* Perkecil lingkaran handle moveable */
+.moveable-control {
+  width: 6px !important;   /* default sekitar 12px */
+  height: 6px !important;
+  margin: -3px 0 0 -3px !important; /* biar titik tetap di tengah */
+}
+
+/* Opsional: ubah border/warna supaya lebih soft */
+.moveable-control {
+  background: #3b82f6 !important; /* biru Tailwind */
+  border: 1px solid white !important;
+}
+

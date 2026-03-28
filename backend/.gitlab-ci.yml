@@ -1,0 +1,23 @@
+stages:
+  - deploy-api
+
+deploy_api_to_server:
+  stage: deploy-api
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      changes:
+        - api/**/* 
+        - .gitlab-ci.yml
+  script:
+    - echo "Installing sshpass..."
+    - apt-get update && apt-get install -y sshpass
+    - echo "Deploying to server..."
+    - |
+      sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" << 'EOF'
+      cd /home/administrator/erplandpro
+      git pull
+      cd api
+      composer install --no-dev
+      php artisan migrate --force
+      sudo systemctl restart octane.service
+      EOF

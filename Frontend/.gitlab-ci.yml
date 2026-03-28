@@ -1,0 +1,19 @@
+stages:
+  - deploy-api
+
+sync_api_to_laravel_repo:
+  stage: deploy-api
+  only:
+    changes:
+      - api/**/*
+  script:
+    - echo "Syncing /api to deploy repo..."
+    - git config --global user.email "ci@example.com"
+    - git config --global user.name "CI Bot"
+    - cd api
+    - git init
+    - git remote add origin "$DEPLOY_REPO_URL"
+    - git checkout -b $DEPLOY_BRANCH || git checkout $DEPLOY_BRANCH
+    - git add .
+    - git commit -m "Sync from monorepo $(date +%Y-%m-%d\ %H:%M:%S)" || echo "Nothing to commit"
+    - git push --force origin $DEPLOY_BRANCH
